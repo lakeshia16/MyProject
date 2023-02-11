@@ -1,0 +1,94 @@
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-mb-4 mb-3 border-bottom">
+    <h2 class="my-0 mr-md-auto font-weight-normal">Загрузка изображения</h2>
+    <p><i>Загрузите изображение: </i><input type="file" class="file" name="myfile1"><br></p>
+    <p><i>Введите координаты: </i><input type="text" class="text" required placeholder="x1 y1 x2 y2" name="coordinates"><br></p>
+    <button type="submit" class="btn btn-success">Добавить</button>
+  </div>
+</form>
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-mb-4 mb-3 border-bottom">
+  <h2 class="my-0 mr-md-auto font-weight-normal">Информация об изображении</h2>
+  <p><i>Ссылка на изображение: </i><a href="{{ file_url }}">{{ file_url }}</a></p>
+  <p><i>Высота изображения в пикселях: </i>{{ higth_img }}</p>
+  <p><i>Ширина изображения в пикселях: </i>{{ weigth_img }}</p>
+</div>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-mb-4 mb-3 border-bottom">
+  <h2 class="my-0 mr-md-auto font-weight-normal">Информация об объекте</h2>
+  <p><i>Высота объекта в пикселях: </i>{{ higth_o }}</p>
+  <p><i>Ширина объекта в пикселях: </i>{{ weigth_o }}</p>
+  <p><i>Координаты объекта: </i>{{ coord }}</p>
+  <p><i>Периметр объекта: </i>{{ perimetr }}</p>
+  <p><i>Площадь объекта: </i>{{ square }}</p>
+  <p><i>Список значений R: </i>{{ r_lst }}</p>
+  <p><i>Список значений G: </i>{{ r_lst }}</p>
+  <p><i>Список значений B: </i>{{ r_lst }}</p>
+
+  <p><i>Среднее значение R: </i>{{ avg_r }}</p>
+  <p><i>Среднее значение G: </i>{{ avg_g }}</p>
+  <p><i>Среднее значение B: </i>{{ avg_b }}</p>
+</div>
+
+<style>
+       body {
+        background: #c7b39b url(images/bg.jpg);
+        font-size: 120%;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: #333366;
+        border: 8px solid #a68754;
+        margin: 40px;
+        padding: 20px
+       }
+      .file {
+        background-color: white;
+        color: black;
+        border: 2px solid #333366;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      .text {
+        background-color: white;
+        color: black;
+        border: 2px solid #333366;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      .btn-success {
+        background-color: white;
+        color: black;
+        border: 2px solid #333366;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      .btn-success:hover {
+          background-color: #333366;
+          color: white;
+      }
+</style>
